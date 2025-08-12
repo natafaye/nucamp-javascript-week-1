@@ -1,31 +1,15 @@
-//const myFavoriteFood = prompt("What's your favorite food?")
-// const is actually considered the default in JS
-// because it helps prevent bugs and it's more readable
-
-// A const variable and a constant are not the same thing
-// const it won't change later
-// constant it will always have this exact value
-
-// if(myFavoriteFood === "spaghetti") {
-//     alert("Your favorite is spaghetti")
-// }
-
-// One equals = is a command
-// Your favorite food is now spaghetti
-
-// Triple equals === is a question
-// Is your favorite food spaghetti?
-
-let count = 3
-
-count = 4
-
-count += 5 // count = count + 5
-
 let friend = "fish"
+// let friends = "shark" NO EFFECT ON LINE 3
 friend = "hippo"
 
-friend += "fish" // friend = "hippo" + "fish"
+
+friend += "fish" 
+// SIMPLIFIES TO: friend = friend + fish
+
+
+let fee = 1.25
+let total = 7.99 + fee
+
 
 
 let dogName
@@ -34,6 +18,15 @@ let sheds
 let pottyTrained
 let likesSnuggles
 
+// Puzzle Pieces:
+// dogName, likesFetch, sheds, pottyTrained, likesSnuggles
+// () && || !
+
+// He wants it to be potty trained
+// He doesn’t want it to shed
+// He wants it to like to snuggle or like to play fetch (or both)
+
+
 // Milo
 dogName = "Milo"
 likesFetch = true
@@ -41,19 +34,8 @@ sheds = true
 pottyTrained = true
 likesSnuggles = true
 
-// He wants it to be potty trained
-// He doesn’t want it to shed
-// He wants it to like to snuggle or like to play fetch (or both)
+let shouldGetMilo = pottyTrained && !sheds && (likesSnuggles || likesFetch)
 
-// && || ! ()
-// dogName, likesFetch, sheds, pottyTrained, likesSnuggles
-
-const rafaelShouldGetMilo = pottyTrained && !sheds && (likesFetch || likesSnuggles)
-
-console.log("Should I get Milo", rafaelShouldGetMilo)
-
-// Why parenthesis? Because && is greedy (or is higher precedence in the order of operations)
-// (3 + 4) * 5 <-- 35 or 23
 
 // Penny
 dogName = "Penny"
@@ -62,37 +44,60 @@ sheds = false
 pottyTrained = true
 likesSnuggles = true
 
-const rafaelShouldGetPenny = pottyTrained && !sheds && (likesFetch || likesSnuggles)
-
-console.log("Should I get Penny", rafaelShouldGetPenny)
+let shouldGetPenny = pottyTrained && !sheds && (likesSnuggles || likesFetch)
 
 
-// Making the function (saving it) technical term is declaring it
-function putKidsToBed() {
-    // the code to run when this function is called
-    // alert("Go to bed!")
-    // alert("Go to bed!")
-    // alert("Go to bed!")
-    // alert("Go to bed!")
-    // alert("Go to bed!")
+console.log("Milo: " + shouldGetMilo)
+console.log("Penny: " + shouldGetPenny)
+
+
+let age = 40
+let country = "USA"
+let money = 1
+
+
+if((age >= 21 || country === "Germany") && money >= 4.99) {
+    console.log("Here's a beer!")
+} else {
+    console.log("You can't have one")
 }
 
-// trigger / call / run
-putKidsToBed()
-putKidsToBed()
+
+// let cost = 100
+// const numberOfPeople = prompt("How many people are in your group?") // "70"
+
+// // If you have more than 10 people -20$
+// // If you have more than 5 people -10$
+// // If you have more than 50 people -50$
+
+// if(numberOfPeople > 50) {
+//     cost -= 50
+// } else if(numberOfPeople > 10) { //  && numberOfPeople <= 50
+//     cost -= 20 // cost = cost - 20
+// } else if(numberOfPeople > 5) { // && numberOfPeople <= 10
+//     cost -= 10
+// } else { // we can assume that you have 5 or less poeple in your group
+//     alert("Wow you don't have a lot of friends")
+// }
+
+// alert("Your cost is $" + cost)
+
+// 2 people = $100
+// 7 people = $90
+// 12 people = $80
+// 70 poeple = $50
 
 
-// parameters are just variables that the function makes for you
 
-function cookInOven(food, temperature) { // let food = FIRST THING; let temperature = SECOND THING
-    let cookedFood = "Cooked " + food + " at " + temperature
-    return cookedFood // return always simplifies down to a value then returns that
+
+// Save the contact
+
+// parameter = variable that's made by the function
+
+function cookInOven(food, temperature) {
+  let cookedFood = "Cooked " + food + " at " + temperature
+  return cookedFood
 }
 
-// The way code runs it simplifies the right hand side of the equal sign to a value
-// a call to a function simplifies to whatever that function returns
-// parameters will simplify to a value then that value gets passed in
-let cookedRice = cookInOven("rice", 200)
-let cookedSomethingElse = cookInOven("chicken", 450)
-console.log(cookedRice)
-
+let cookedRice = cookInOven("rice", 200) // function simplifies to whatever value it returns
+console.log("This is what's for dinner: " + cookedRice)
